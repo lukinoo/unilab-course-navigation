@@ -1,0 +1,113 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --light-white: #f1f1f1;
+  --light-black: #111;
+  --dark-black: #000;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: sans-serif;
+  height: 400vh;
+  padding-top: 1rem;
+}
+
+.overflow-h {
+  overflow-y: hidden;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: var(--light-black);
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  color: var(--light-white);
+}
+
+header nav .nav-logo {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+header nav .nav-links {
+  height: 90vh;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  top: 5rem;
+  right: 0;
+  background: var(--light-black);
+  list-style: none;
+  transform: translateX(100%);
+  transition: transform 0.6s ease;
+}
+
+header nav .nav-links.nav-links__active {
+  transform: translateX(0);
+}
+
+header nav .nav-links li a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-bottom: 1px solid transparent;
+  color: var(--light-white);
+}
+
+.nav-burger {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem 0;
+  cursor: pointer;
+}
+
+.nav-burger > div {
+  width: 33px;
+  height: 2px;
+  background: var(--light-white);
+  transition: transform 0.6s ease;
+}
+
+.nav-burger.nav-burger__active div:nth-child(1) {
+  transform: rotate(40deg) translateY(13px);
+}
+
+.nav-burger.nav-burger__active div:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-burger.nav-burger__active div:nth-child(3) {
+  transform: rotate(-40deg) translateY(-13px);
+}
+
+section {
+  padding: 1.5rem;
+  color: var(--light-black);
+}
+
+section h1 {
+  font-size: 4rem;
+}
+
+section p {
+  font-size: 2rem;
+}
